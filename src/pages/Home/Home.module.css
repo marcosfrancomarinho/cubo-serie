@@ -1,0 +1,7 @@
+.container_card{
+    width: 100%;
+    flex-wrap:wrap; 
+    gap:3px;
+    display: flex;
+    background-color: #000000;
+}

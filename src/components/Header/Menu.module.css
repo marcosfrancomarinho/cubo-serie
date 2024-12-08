@@ -1,0 +1,9 @@
+.item {
+    font-size: 1.8em;
+    color: #ffffff;
+    transition: all 0.8s;
+    text-transform: capitalize;
+}
+.item:hover{
+    transform: translateY(-0.05em);
+}
