@@ -9,7 +9,7 @@ interface ParamsGlobal {
 const Global: React.FC<ParamsGlobal> = ({ children }) => {
     const [datas, setDatas] = React.useState<ValuesParams | null>(null);
     React.useEffect(() => {
-        fetch('/src/json/db.json')
+        fetch('/json/db.json')
             .then((res) => res.json())
             .then((json) => setDatas(json));
     }, [datas]);
