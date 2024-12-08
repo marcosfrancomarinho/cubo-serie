@@ -21,7 +21,7 @@ const LoginForm: React.FC = () => {
                     <Link
                         title="Crie uma conta para Aproveitar os conteudos"
                         className={style.create_account}
-                        to="/siginup"
+                        to="/signup"
                     >
                         Criar a Conta
                     </Link>
