@@ -6,6 +6,6 @@ export const accentRemover = (text: string): string => {
             .normalize('NFD')
             .replace(/[\u0300-\u036f\s]/g, ''),
     );
-    if (path === root.concat('inicio')) return root;
+    if (path === root.concat('home')) return root;
     return path;
 }
