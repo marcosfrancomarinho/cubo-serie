@@ -9,7 +9,7 @@ interface ParamsCard {
 
 const Card: React.FC<ParamsCard> = ({ title, url }) => {
     return (
-        <Link to='/login' className={style.card}>
+        <Link to="/login" className={style.card}>
             <img className={style.img} src={url} alt={title} />
         </Link>
     );

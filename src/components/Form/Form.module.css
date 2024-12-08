@@ -1,0 +1,68 @@
+.container_form {
+    background-color: #f0f0f0f0;
+    padding: 10px;
+    min-height: 500px;
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    flex-direction: column;
+
+    & .title {
+        font-size: 2.5em;
+    }
+
+    & .form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        width: 90%;
+        background-color: #f1f1f1f1;
+        border-radius: 2px;
+        box-shadow: 1px 1px 5px 1px #aeadadc0;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .btn_group {
+        display: flex;
+        gap: 10px;
+        position: relative;
+    }
+
+    .create_account {
+        font-size: 1.4em;
+        align-self: center;
+        position: absolute;
+        right: 10px;
+        font-style: italic;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .container_form {
+        align-items: center;
+        padding: 5px;
+
+        & .title {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        & .form {
+            width: 100%;
+        }
+
+        .btn_group {
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .create_account {
+            padding: 10px;
+            position: relative;
+            text-align: center;
+            flex: 1 1 150px;
+        }
+
+    }
+}
