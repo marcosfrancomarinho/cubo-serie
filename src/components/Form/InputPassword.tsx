@@ -12,7 +12,7 @@ const InputPassoword: React.FC = () => {
                 type="password"
                 name="password"
                 id="password"
-                placeholder="Insira sua Senha"
+                placeholder="Insira a Senha"
                 autoComplete="current-password"
             />
         </div>

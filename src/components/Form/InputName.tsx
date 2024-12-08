@@ -12,7 +12,7 @@ const InputName: React.FC = () => {
                 type="name"
                 name="name"
                 id="name"
-                placeholder="Insira o seu nome"
+                placeholder="Insira o nome"
                 autoComplete="name"
             />
         </div>
