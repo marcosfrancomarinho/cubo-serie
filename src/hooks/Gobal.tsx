@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { BrowserRouter, Routes } from 'react-router-dom';
 import { Context, ValuesParams } from './Context';
 
 interface ParamsGlobal {
@@ -22,9 +21,7 @@ const Global: React.FC<ParamsGlobal> = ({ children }) => {
                     title: datas.title,
                 }}
             >
-                <BrowserRouter>
-                    <Routes>{children}</Routes>
-                </BrowserRouter>
+                {children}
             </Context.Provider>
         );
     }
