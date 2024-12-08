@@ -63,7 +63,12 @@
         {
             "title": "supernatural",
             "url": "/images/supernatural.jpg"
+        },
+        {
+            "title": "arcane",
+            "url": "/images/arcane.jpg"
         }
+        
     ],
     "menu": [
         "Home",
