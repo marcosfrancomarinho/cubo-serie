@@ -51,6 +51,18 @@
         {
             "title": "office",
             "url": "/images/office.jpg"
+        },
+        {
+            "title": "100",
+            "url": "/images/100.jpg"
+        },
+        {
+            "title": "viking",
+            "url": "/images/viking.jpg"
+        },
+        {
+            "title": "supernatural",
+            "url": "/images/supernatural.jpg"
         }
     ],
     "menu": [
