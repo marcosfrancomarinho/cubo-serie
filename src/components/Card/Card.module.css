@@ -18,13 +18,3 @@
     }
 
 }
-
-@media screen and (max-width:600px) {
-    .card {
-        & .img {
-            &:hover {
-                padding: 0;
-            }
-        }
-    }
-}
