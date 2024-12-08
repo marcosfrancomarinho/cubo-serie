@@ -42,10 +42,7 @@ const Footer: React.FC = () => {
                     </li>
                 </div>
             </ul>
-            <h3 className={style.dev}>
-                {' '}
-                &copy; marcosfrancomarinho
-            </h3>
+            <h3 className={style.dev}>&copy; marcosfrancomarinho</h3>
         </footer>
     );
 };
