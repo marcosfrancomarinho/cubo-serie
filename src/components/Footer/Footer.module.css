@@ -71,7 +71,6 @@
                 & .footer_item {
                     border-bottom: none;
                     padding: 5px;
-                    animation: zoom 1s infinite ease-in-out alternate;
                 }
             }
         }
