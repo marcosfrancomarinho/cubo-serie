@@ -5,14 +5,14 @@ import Footer from '../../components/Footer/Footer';
 import RegisterForm from '../../components/Form/RegisterForm';
 
 const Register: React.FC = () => {
-    const { menu, title } = React.useContext(Context) as ValuesParams;
+    const { menu, title , footer} = React.useContext(Context) as ValuesParams;
     return (
         <>
             <Header menu={menu} title={title} />
             <main>
                 <RegisterForm />
             </main>
-            <Footer />
+            <Footer footer={footer} />
         </>
     );
 };
