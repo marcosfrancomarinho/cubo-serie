@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './Card.module.css';
+import { Link } from 'react-router-dom';
 interface ParamsCard {
     url: string;
     title: string;
@@ -7,9 +8,9 @@ interface ParamsCard {
 
 const Card: React.FC<ParamsCard> = ({ title, url }) => {
     return (
-        <div className={style.card}>
+        <Link to='/login' className={style.card}>
             <img className={style.img} src={url} alt={title} />
-        </div>
+        </Link>
     );
 };
 
