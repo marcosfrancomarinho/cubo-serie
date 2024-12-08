@@ -23,13 +23,13 @@
         gap: 10px;
     }
 
-    .btn_group {
+    & .btn_group {
         display: flex;
         gap: 10px;
         position: relative;
     }
 
-    .create_account {
+    & .create_account {
         font-size: 1.4em;
         align-self: center;
         position: absolute;
@@ -52,12 +52,12 @@
             width: 100%;
         }
 
-        .btn_group {
+        & .btn_group {
             justify-content: space-around;
             flex-wrap: wrap;
         }
 
-        .create_account {
+        & .create_account {
             padding: 10px;
             position: relative;
             text-align: center;
