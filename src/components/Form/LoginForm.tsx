@@ -10,7 +10,7 @@ const LoginForm: React.FC = () => {
     return (
         <section className={style.container_form}>
             <h2 className={style.title}>
-                Faça o Login e Aproveite o Cinema em Casa.
+                Faça o Login e Aproveite o Cinema em Casa:
             </h2>
             <form className={style.form}>
                 <InputEmail />

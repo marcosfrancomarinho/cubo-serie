@@ -10,7 +10,7 @@ const RegisterForm: React.FC = () => {
     return (
         <section className={style.container_form}>
             <h2 className={style.title}>
-                Faça o Cadastro e Aproveite o Cinema em Casa.
+                Faça o Cadastro e Aproveite o Cinema em Casa:
             </h2>
             <form className={style.form}>
                 <InputName />

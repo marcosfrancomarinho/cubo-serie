@@ -6,7 +6,7 @@ import style from './Home.module.css';
 import Footer from '../../components/Footer/Footer';
 
 const Home: React.FC = () => {
-    const { menu, title, images } = React.useContext(Context) as ValuesParams;
+    const { menu, title, images, footer } = React.useContext(Context) as ValuesParams;
     return (
         <>
             <Header menu={menu} title={title} />
@@ -17,7 +17,7 @@ const Home: React.FC = () => {
                     ))}
                 </div>
             </main>
-            <Footer />
+            <Footer footer={footer} />
         </>
     );
 };

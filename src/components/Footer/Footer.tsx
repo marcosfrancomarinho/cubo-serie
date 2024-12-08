@@ -1,48 +1,35 @@
 import React from 'react';
 import style from './Footer.module.css';
+import Redes from './Redes';
 
-const Footer: React.FC = () => {
+interface ParamsFooter {
+    footer: {
+        url: string;
+        redes: string;
+        id: number;
+    }[];
+}
+
+const Footer: React.FC<ParamsFooter> = ({ footer }) => {
     return (
         <footer className={style.footer}>
             <ul className={style.footer_menu}>
                 <div className={style.footer_column}>
-                    <li className={style.footer_item}>
-                        <a
-                            href="https://www.instagram.com/_marcosmarinho98/"
-                            className={style.footer_link}
-                        >
-                            Instagram
-                        </a>
-                    </li>
-                    <li className={style.footer_item}>
-                        <a
-                            href="https://github.com/marcosfrancomarinho/cubo-serie"
-                            className={style.footer_link}
-                        >
-                            GitHub
-                        </a>
-                    </li>
+                    {footer
+                        .filter(({ id }) => id % 2 === 0)
+                        .map((item) => (
+                            <Redes key={item.id} {...item} />
+                        ))}
                 </div>
+                <h3 className={style.dev}>&copy; marcosfrancomarinho</h3>
                 <div className={style.footer_column}>
-                    <li className={style.footer_item}>
-                        <a
-                            href="https://www.linkedin.com/in/marcos-franco-marinho-031b55187/"
-                            className={style.footer_link}
-                        >
-                            Linkedin
-                        </a>
-                    </li>
-                    <li className={style.footer_item}>
-                        <a
-                            href="https://www.facebook.com/marcos.marinho.16547/?locale=pt_BR"
-                            className={style.footer_link}
-                        >
-                            Facebook
-                        </a>
-                    </li>
+                    {footer
+                        .filter(({ id }) => id % 2 === 1)
+                        .map((item) => (
+                            <Redes key={item.id} {...item} />
+                        ))}
                 </div>
             </ul>
-            <h3 className={style.dev}>&copy; marcosfrancomarinho</h3>
         </footer>
     );
 };
