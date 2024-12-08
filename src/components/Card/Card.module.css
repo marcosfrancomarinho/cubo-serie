@@ -12,7 +12,7 @@
         background-color: #000000;
 
         &:hover {
-            transform: scale(1.03) translateY(10px);
+            transform: scale(1.03) translateY(5px);
             box-shadow: inset 2px 2px 2px 2px #ffffff;
         }
     }
