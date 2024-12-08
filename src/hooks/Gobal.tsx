@@ -1,31 +1,18 @@
 import React, { ReactNode } from 'react';
 import { Context, ValuesParams } from './Context';
+import { useFetch } from '../utils/useFetch';
 
 interface ParamsGlobal {
     children: ReactNode;
 }
 
 const Global: React.FC<ParamsGlobal> = ({ children }) => {
-    const [datas, setDatas] = React.useState<ValuesParams | null>(null);
-    React.useEffect(() => {
-        fetch('/json/db.json')
-            .then((res) => res.json())
-            .then((json) => setDatas(json));
-    }, []);
+    const datas: ValuesParams | null = useFetch('/json/db.json');
     if (datas) {
         return (
-            <Context.Provider
-                value={{
-                    images: datas.images,
-                    menu: datas.menu,
-                    title: datas.title,
-                }}
-            >
-                {children}
-            </Context.Provider>
+            <Context.Provider value={{ ...datas }}>{children}</Context.Provider>
         );
     }
-    return null;
 };
 
 export default Global;
