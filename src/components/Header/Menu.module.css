@@ -4,6 +4,7 @@
     transition: all 0.8s;
     text-transform: capitalize;
 }
-.item:hover{
+
+.item:hover {
     transform: translateY(-0.05em);
 }
