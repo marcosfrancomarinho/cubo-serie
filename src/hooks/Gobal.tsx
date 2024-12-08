@@ -12,7 +12,7 @@ const Global: React.FC<ParamsGlobal> = ({ children }) => {
         fetch('/json/db.json')
             .then((res) => res.json())
             .then((json) => setDatas(json));
-    }, [datas]);
+    }, []);
     if (datas) {
         return (
             <Context.Provider
