@@ -7,6 +7,7 @@
     position: sticky;
     top: 0;
     z-index: 1;
+    border-bottom:1px solid #2e2c2ccf;
 
     & .title {
         font-size: 3.5em;

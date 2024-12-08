@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header';
 import { Context, ValuesParams } from '../../hooks/Context';
 import Card from '../../components/Card/Card';
 import style from './Home.module.css';
+import Footer from '../../components/Footer/Footer';
 
 const Home: React.FC = () => {
     const { menu, title, images } = React.useContext(Context) as ValuesParams;
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
                     ))}
                 </div>
             </main>
+            <Footer />
         </>
     );
 };

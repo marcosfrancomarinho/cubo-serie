@@ -55,8 +55,8 @@
     ],
     "menu": [
         "Inicio",
-        "Registro",
-        "Suporte"
+        "login",
+        "Sigin up"
     ],
-    "title": "Cubo Series"
+    "title": "Clube das Series"
 }
