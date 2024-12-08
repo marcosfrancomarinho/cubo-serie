@@ -8,7 +8,7 @@ export function useFetch(url: string): ValuesParams | null {
         fetch(url)
             .then((res) => res.json())
             .then((json) => setDatas(json));
-    }, []);
+    }, [url]);
     return datas;
 }
 
