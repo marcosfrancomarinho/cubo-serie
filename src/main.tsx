@@ -5,9 +5,9 @@ import Global from './hooks/Gobal';
 import AppRouter from './routers/AppRouter';
 
 createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-        <Global>
-            <AppRouter />
-        </Global>
-    </StrictMode>,
+	<StrictMode>
+		<Global>
+			<AppRouter />
+		</Global>
+	</StrictMode>,
 );
