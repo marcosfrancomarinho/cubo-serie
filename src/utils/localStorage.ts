@@ -1,4 +1,4 @@
-export function setTokenLocalStorage(token: string): void {
+export function setTokenLocalStorage(token: string | undefined): void {
 	if (!token || token.length === 0) return;
 	window.localStorage.setItem('token', token);
 }

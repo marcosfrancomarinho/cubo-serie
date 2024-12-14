@@ -1,9 +1,10 @@
 import React from 'react';
-import { setTokenLocalStorage } from '../utils/localStorage';
 
 interface ParamsUseSubmit {
 	ok: boolean;
 	status: string;
+	token: string | undefined;
+	name: string;
 }
 
 function useSubmit<T>(
@@ -27,10 +28,9 @@ function useSubmit<T>(
 				setLoading(true);
 				const response = await fetch(url, options);
 				const token = response.headers.get('authorization') as string;
-				setTokenLocalStorage(token);
 				const json = await response.json();
 				if (!response.ok) throw new Error(json.error);
-				setDatas(json as ParamsUseSubmit);
+				setDatas({ ...json, token } as ParamsUseSubmit);
 			} catch (error) {
 				setError(error as Error);
 			} finally {

@@ -5,9 +5,11 @@ import style from './Form.module.css';
 import { Link } from 'react-router-dom';
 import useSubmit from '../../hooks/useSubmit';
 import getDatasForm from '../../utils/getDataForm';
-import { Alert } from 'react-bootstrap';
 import InputEmail from '../Input/InputEmail';
 import InputPassword from '../Input/InputPassword';
+import { setTokenLocalStorage } from '../../utils/localStorage';
+import { Context, ValuesParams } from '../../hooks/Context';
+import { getFirstName } from '../../utils/formart';
 
 const LoginForm: React.FC = () => {
 	interface ParamsFormLogin {
@@ -16,6 +18,7 @@ const LoginForm: React.FC = () => {
 	}
 
 	const [datasUser, setData] = React.useState<ParamsFormLogin | null>(null);
+	const { setLogin, setNameUser } = React.useContext(Context) as ValuesParams;
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
@@ -26,18 +29,16 @@ const LoginForm: React.FC = () => {
 		'https://clube-series-api.onrender.com/login',
 		datasUser as ParamsFormLogin,
 	);
+	React.useEffect(() => {
+		if (!datas) return;
+		setTokenLocalStorage(datas.token);
+		setLogin(datas.ok);
+		setNameUser(getFirstName(datas.name));
+	}, [datas, setLogin, setNameUser]);
 	return (
 		<section className={style.container_form}>
-			{error && (
-				<Alert color="danger" dismissible>
-					{error.message}
-				</Alert>
-			)}
-			{!error && datas?.ok && (
-				<Alert color="success" dismissible>
-					{datas.status}
-				</Alert>
-			)}
+			{error && <h1>{error.message}</h1>}
+			{!error && datas?.ok && <h1>{datas.status}</h1>}
 			<h2 className={style.title}>Faça o Login e Aproveite o Cinema em Casa:</h2>
 			<form onSubmit={(e) => handleSubmit(e)} className={style.form}>
 				<InputEmail />
