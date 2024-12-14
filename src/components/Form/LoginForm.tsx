@@ -1,6 +1,4 @@
 import React from 'react';
-import InputEmail from './InputEmail';
-import InputPassoword from './InputPassword';
 import BtnSubmit from '../Button/BtnSubmit';
 import BtnReset from '../Button/BtnReset';
 import style from './Form.module.css';
@@ -8,6 +6,8 @@ import { Link } from 'react-router-dom';
 import useSubmit from '../../hooks/useSubmit';
 import getDatasForm from '../../utils/getDataForm';
 import { Alert } from 'react-bootstrap';
+import InputEmail from '../Input/InputEmail';
+import InputPassword from '../Input/InputPassword';
 
 const LoginForm: React.FC = () => {
 	interface ParamsFormLogin {
@@ -41,7 +41,7 @@ const LoginForm: React.FC = () => {
 			<h2 className={style.title}>Faça o Login e Aproveite o Cinema em Casa:</h2>
 			<form onSubmit={(e) => handleSubmit(e)} className={style.form}>
 				<InputEmail />
-				<InputPassoword />
+				<InputPassword />
 				<div className={style.btn_group}>
 					<BtnSubmit content={`${loading ? 'carregando...' : 'Entrar'}`} />
 					<BtnReset content="Cancelar" />

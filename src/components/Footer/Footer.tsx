@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Footer.module.css';
-import Redes from './Redes';
+import Redes from '../Redes/Redes';
 
 interface ParamsFooter {
     footer: {

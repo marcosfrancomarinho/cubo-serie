@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Footer.module.css';
+import style from './Redes.module.css'
 
 interface ParamsRedes {
     id: number;
@@ -9,8 +9,8 @@ interface ParamsRedes {
 
 const Redes: React.FC<ParamsRedes> = ({ redes, url, id }) => {
     return (
-        <li key={id} className={style.footer_item}>
-            <a href={url} className={style.footer_link}>
+        <li key={id} className={style.redes_item}>
+            <a href={url} className={style.redes_link}>
                 {redes}
             </a>
         </li>

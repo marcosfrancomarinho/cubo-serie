@@ -34,19 +34,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
-            & .footer_item {
-                border-bottom: 2px solid #dddddddd;
-                animation: zoom 1s infinite ease-in-out alternate;
-                overflow: hidden;
-            }
-            
-            & .footer_link {
-                font-size: 1.7em;
-                color: #ffffffff;
-                cursor: pointer;
-                font-style: italic;
-            }
         }
     }
 
@@ -67,22 +54,8 @@
 
             & .footer_column {
                 gap: 5px;
-
-                & .footer_item {
-                    border-bottom: none;
-                    padding: 5px;
-                }
             }
         }
     }
 
-}
-@keyframes zoom {
-    from {
-        transform: scale(1)
-    }
-
-    to {
-        transform: scale(1.05)
-    }
 }

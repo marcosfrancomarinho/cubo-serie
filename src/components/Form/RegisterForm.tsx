@@ -1,10 +1,10 @@
 import React from 'react';
-import InputEmail from './InputEmail';
-import InputPassword from './InputPassword';
+import InputEmail from '../Input/InputEmail';
+import InputPassword from '../Input/InputPassword';
 import BtnSubmit from '../Button/BtnSubmit';
 import BtnReset from '../Button/BtnReset';
 import style from './Form.module.css';
-import InputName from './InputName';
+import InputName from '../Input/InputName';
 import getDatasForm from '../../utils/getDataForm';
 import useSubmit from '../../hooks/useSubmit';
 
@@ -29,8 +29,8 @@ const RegisterForm: React.FC = () => {
 	);
 	return (
 		<section className={style.container_form}>
-			{error && <h1>error existente</h1>}
-			{!error && datas?.ok && datas.status}
+			{error && <h1>h1{error.message}</h1>}
+			{!error && datas?.ok && <h1>{datas.status}</h1>}
 			<h2 className={style.title}>
 				Faça o Cadastro e Aproveite o Cinema em Casa:
 			</h2>

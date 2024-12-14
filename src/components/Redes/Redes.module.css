@@ -1,0 +1,31 @@
+.redes_item {
+    border-bottom: 2px solid #dddddddd;
+    animation: zoom 1s infinite ease-in-out alternate;
+    overflow: hidden;
+}
+
+.redes_link {
+    font-size: 1.7em;
+    color: #ffffffff;
+    cursor: pointer;
+    font-style: italic;
+}
+
+
+@media screen and (max-width:600px) {
+    & .redes_item {
+        border-bottom: none;
+        padding: 5px;
+    }
+
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(1.05)
+    }
+}
