@@ -7,7 +7,10 @@ import useSubmit from '../../hooks/useSubmit';
 import getDatasForm from '../../utils/getDataForm';
 import InputEmail from '../Input/InputEmail';
 import InputPassword from '../Input/InputPassword';
-import { setTokenLocalStorage } from '../../utils/localStorage';
+import {
+	setNameLocalStorage,
+	setTokenLocalStorage,
+} from '../../utils/localStorage';
 import { Context, ValuesParams } from '../../hooks/Context';
 import { getFirstName } from '../../utils/formart';
 
@@ -33,7 +36,8 @@ const LoginForm: React.FC = () => {
 		if (!datas) return;
 		setTokenLocalStorage(datas.token);
 		setLogin(datas.ok);
-		setNameUser(getFirstName(datas.name));
+		setNameLocalStorage(getFirstName(datas.name));
+		getFirstName(getFirstName(datas.name));
 	}, [datas, setLogin, setNameUser]);
 	return (
 		<section className={style.container_form}>

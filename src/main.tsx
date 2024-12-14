@@ -4,6 +4,9 @@ import Global from './hooks/Gobal';
 import AppRouter from './routers/AppRouter';
 import './styles/styles.css';
 
+
+
+
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<Global>
