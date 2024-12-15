@@ -4,13 +4,15 @@ import { Context, ValuesParams } from '../../hooks/Context';
 import Card from '../../components/Card/Card';
 import style from './Home.module.css';
 import Footer from '../../components/Footer/Footer';
+import UserAuthenticate from '../../components/UserAuthenticate/UserAuthenticate';
 
 const Home: React.FC = () => {
 	const { menu, title, images, footer } = React.useContext(
 		Context,
 	) as ValuesParams;
+
 	return (
-		<>
+		<UserAuthenticate path="/test">
 			<Header menu={menu} title={title} />
 			<main>
 				<div className={style.container_card}>
@@ -20,7 +22,7 @@ const Home: React.FC = () => {
 				</div>
 			</main>
 			<Footer footer={footer} />
-		</>
+		</UserAuthenticate>
 	);
 };
 

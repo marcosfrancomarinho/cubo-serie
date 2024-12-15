@@ -35,7 +35,7 @@ const LoginForm: React.FC = () => {
 	React.useEffect(() => {
 		if (datas) setTokenLocalStorage(datas.token);
 	}, [datas]);
-	if (datas && !error) return <Navigate to="/"></Navigate>;
+	if (datas && !error) return <Navigate to="/test"></Navigate>;
 	return (
 		<section className={style.container_form}>
 			<h2 className={style.title}>Faça o Login e Aproveite o Cinema em Casa:</h2>
