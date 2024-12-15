@@ -8,14 +8,3 @@ export function getTokenLocalStorage(): string | null {
 	if (!token || token.length === 0) return null;
 	return token;
 }
-
-export function setNameLocalStorage(name: string | undefined): void {
-	if (!name || name.length === 0) return;
-	window.localStorage.setItem('name', name);
-}
-
-export function getNameLocalStorage(): string | null {
-	const name: string | null = window.localStorage.getItem('name');
-	if (!name || name.length === 0) return null;
-	return name;
-}

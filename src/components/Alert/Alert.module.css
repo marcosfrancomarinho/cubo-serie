@@ -1,0 +1,62 @@
+.alert {
+   font-size: 2em;
+   background-color: #e84747;
+   padding: 8px;
+   width: 90%;
+   border-radius: 3px;
+   position: relative;
+   animation: animation-alert 1s infinite ease-in-out;
+   overflow: hidden;
+   border: 1px solid #920c0c;
+
+   & .content {
+      font-size: 1.1em;
+      text-transform: lowercase;
+      color: #000000;
+   }
+
+   & .btnClose {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 1.2em;
+      font-weight: 900;
+      transform: translate(-20%, -25%);
+      cursor: pointer;
+      transition: all 0.6s;
+
+      &:hover {
+         color: #ffffffff;
+      }
+   }
+
+}
+
+@media screen and (max-width:600px) {
+   .alert {
+      width: 100%;
+   }
+}
+
+@keyframes animation-alert {
+   0% {
+      background-color: #e84747;
+   }
+
+   25% {
+      background-color: #ff0000;
+   }
+
+   50% {
+      background-color: #e84747;
+   }
+
+   75% {
+
+      background-color: #ff0000;
+   }
+
+   100% {
+      background-color: #e84747;
+   }
+}

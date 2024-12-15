@@ -2,47 +2,37 @@ import React from 'react';
 import BtnSubmit from '../Button/BtnSubmit';
 import BtnReset from '../Button/BtnReset';
 import style from './Form.module.css';
-import { Link } from 'react-router-dom';
 import useSubmit from '../../hooks/useSubmit';
 import getDatasForm from '../../utils/getDataForm';
 import InputEmail from '../Input/InputEmail';
 import InputPassword from '../Input/InputPassword';
-import {
-	setNameLocalStorage,
-	setTokenLocalStorage,
-} from '../../utils/localStorage';
-import { Context, ValuesParams } from '../../hooks/Context';
-import { getFirstName } from '../../utils/formart';
+import { setTokenLocalStorage } from '../../utils/localStorage';
+import BtnRedirection from '../Button/Btn.redirection';
+import Alert from '../Alert/Alert';
+
+interface ParamsFormLogin {
+	email: string;
+	password: string;
+}
 
 const LoginForm: React.FC = () => {
-	interface ParamsFormLogin {
-		email: string;
-		password: string;
-	}
-
 	const [datasUser, setData] = React.useState<ParamsFormLogin | null>(null);
-	const { setLogin, setNameUser } = React.useContext(Context) as ValuesParams;
-
+	const [hide, setHide] = React.useState<boolean>(true);
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
 		const datasUser = getDatasForm<ParamsFormLogin>(e);
 		setData(datasUser);
+		setHide(true)
 	};
 	const [datas, error, loading] = useSubmit<ParamsFormLogin>(
-		'https://clube-series-api.onrender.com/login',
+		'login',
 		datasUser as ParamsFormLogin,
 	);
 	React.useEffect(() => {
-		if (!datas) return;
-		setTokenLocalStorage(datas.token);
-		setLogin(datas.ok);
-		setNameLocalStorage(getFirstName(datas.name));
-		getFirstName(getFirstName(datas.name));
-	}, [datas, setLogin, setNameUser]);
+		if (datas) setTokenLocalStorage(datas.token);
+	}, [datas]);
 	return (
 		<section className={style.container_form}>
-			{error && <h1>{error.message}</h1>}
-			{!error && datas?.ok && <h1>{datas.status}</h1>}
 			<h2 className={style.title}>Faça o Login e Aproveite o Cinema em Casa:</h2>
 			<form onSubmit={(e) => handleSubmit(e)} className={style.form}>
 				<InputEmail />
@@ -50,15 +40,14 @@ const LoginForm: React.FC = () => {
 				<div className={style.btn_group}>
 					<BtnSubmit content={`${loading ? 'carregando...' : 'Entrar'}`} />
 					<BtnReset content="Cancelar" />
-					<Link
-						title="Crie uma conta para Aproveitar os conteudos"
-						className={style.create_account}
-						to="/signup"
-					>
-						Criar a Conta
-					</Link>
+					<BtnRedirection path="/signup">Criar conta</BtnRedirection>
 				</div>
 			</form>
+			{error && hide && (
+				<Alert hide={hide} setHide={setHide}>
+					{error.message}
+				</Alert>
+			)}
 		</section>
 	);
 };

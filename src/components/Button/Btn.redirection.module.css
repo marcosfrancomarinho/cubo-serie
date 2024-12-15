@@ -1,0 +1,17 @@
+.create_account {
+   font-size: 1.4em;
+   align-self: center;
+   position: absolute;
+   right: 10px;
+   font-style: italic;
+}
+
+@media screen and (max-width:600px) {
+   .create_account {
+      padding: 10px;
+      position: relative;
+      text-align: center;
+      flex: 1 1 200px;
+   }
+
+}

@@ -3,22 +3,21 @@ import React from 'react';
 interface ParamsUseSubmit {
 	ok: boolean;
 	status: string;
-	token: string | undefined;
 	name: string;
+	token: string;
 }
 
 function useSubmit<T>(
-	url: string,
+	path: string,
 	datasUser: T,
 ): [ParamsUseSubmit | null, Error | null, boolean] {
 	const [datas, setDatas] = React.useState<ParamsUseSubmit | null>(null);
 	const [error, setError] = React.useState<Error | null>(null);
 	const [loading, setLoading] = React.useState<boolean>(false);
-
+	const url: string = `https://clube-series-api.onrender.com/${path}`;
 	React.useEffect(() => {
 		const submitData = async () => {
 			if (!datasUser) return;
-
 			const options: RequestInit = {
 				headers: { 'Content-Type': 'application/json' },
 				method: 'POST',
@@ -37,7 +36,6 @@ function useSubmit<T>(
 				setLoading(false);
 			}
 		};
-
 		submitData();
 	}, [url, datasUser]);
 

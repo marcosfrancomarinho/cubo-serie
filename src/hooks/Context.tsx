@@ -12,10 +12,5 @@ export interface ValuesParams {
 		redes: string;
 		id: number;
 	}[];
-	setLogin: React.Dispatch<React.SetStateAction<boolean>>;
-	login: boolean;
-	nameUser: string;
-	setNameUser: React.Dispatch<React.SetStateAction<string>>;
 }
-
 export const Context = React.createContext<ValuesParams | null>(null);
