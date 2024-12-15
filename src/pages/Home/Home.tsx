@@ -12,7 +12,7 @@ const Home: React.FC = () => {
 	) as ValuesParams;
 
 	return (
-		<UserAuthenticate path="/test">
+		<UserAuthenticate router="/" path="/test">
 			<Header menu={menu} title={title} />
 			<main>
 				<div className={style.container_card}>
