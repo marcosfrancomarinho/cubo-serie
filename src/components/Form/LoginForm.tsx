@@ -10,6 +10,7 @@ import { setTokenLocalStorage } from '../../utils/localStorage';
 import BtnRedirection from '../Button/Btn.redirection';
 import Alert from '../Alert/Alert';
 import { Navigate, useLocation } from 'react-router-dom';
+import Spinner from '../Spinner/Spinner';
 
 interface ParamsFormLogin {
 	email: string;
@@ -43,7 +44,7 @@ const LoginForm: React.FC = () => {
 				<InputEmail value={emailLocation} />
 				<InputPassword />
 				<div className={style.btn_group}>
-					<BtnSubmit content={`${loading ? 'carregando...' : 'Entrar'}`} />
+					<BtnSubmit content={loading ? <Spinner /> : 'Entrar'} />
 					<BtnReset content="Cancelar" />
 					<BtnRedirection path="/signup">Criar conta</BtnRedirection>
 				</div>

@@ -10,10 +10,10 @@ interface ParamsAlert {
 const Alert: React.FC<ParamsAlert> = ({ children, setHide, hide }) => {
 	return (
 		<div className={style.alert}>
-			<span onClick={() => setHide(!hide)} className={style.btnClose}>
-				x
-			</span>
 			<div className={style.content}>{children}</div>
+			<span onClick={() => setHide(!hide)} className={style.btnClose}>
+				X
+			</span>
 		</div>
 	);
 };
