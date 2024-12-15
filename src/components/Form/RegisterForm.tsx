@@ -9,6 +9,7 @@ import getDatasForm from '../../utils/getDataForm';
 import useSubmit from '../../hooks/useSubmit';
 import BtnRedirection from '../Button/Btn.redirection';
 import Alert from '../Alert/Alert';
+import { Navigate } from 'react-router-dom';
 
 interface ParamsFormRegister {
 	name: string;
@@ -27,10 +28,15 @@ const RegisterForm: React.FC = () => {
 		setHide(true);
 	};
 
-	const [, error, loading] = useSubmit<ParamsFormRegister>(
+	const [datas, error, loading] = useSubmit<ParamsFormRegister>(
 		'signup',
 		datasUser as ParamsFormRegister,
 	);
+
+	if (datas && !error && datasUser)
+		return (
+			<Navigate replace state={{ email: datasUser.email }} to="/login"></Navigate>
+		);
 	return (
 		<section className={style.container_form}>
 			<h2 className={style.title}>

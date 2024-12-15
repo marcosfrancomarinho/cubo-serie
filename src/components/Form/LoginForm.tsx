@@ -9,6 +9,7 @@ import InputPassword from '../Input/InputPassword';
 import { setTokenLocalStorage } from '../../utils/localStorage';
 import BtnRedirection from '../Button/Btn.redirection';
 import Alert from '../Alert/Alert';
+import { Navigate, useLocation } from 'react-router-dom';
 
 interface ParamsFormLogin {
 	email: string;
@@ -18,11 +19,14 @@ interface ParamsFormLogin {
 const LoginForm: React.FC = () => {
 	const [datasUser, setData] = React.useState<ParamsFormLogin | null>(null);
 	const [hide, setHide] = React.useState<boolean>(true);
+	const location = useLocation();
+	const emailLocation: string | undefined = location.state?.email;
+	
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
 		const datasUser = getDatasForm<ParamsFormLogin>(e);
 		setData(datasUser);
-		setHide(true)
+		setHide(true);
 	};
 	const [datas, error, loading] = useSubmit<ParamsFormLogin>(
 		'login',
@@ -31,11 +35,12 @@ const LoginForm: React.FC = () => {
 	React.useEffect(() => {
 		if (datas) setTokenLocalStorage(datas.token);
 	}, [datas]);
+	if (datas && !error) return <Navigate to="/prime"></Navigate>;
 	return (
 		<section className={style.container_form}>
 			<h2 className={style.title}>Faça o Login e Aproveite o Cinema em Casa:</h2>
 			<form onSubmit={(e) => handleSubmit(e)} className={style.form}>
-				<InputEmail />
+				<InputEmail value={emailLocation} />
 				<InputPassword />
 				<div className={style.btn_group}>
 					<BtnSubmit content={`${loading ? 'carregando...' : 'Entrar'}`} />
