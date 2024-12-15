@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './Input.module.css';
+import { Context, ValuesParams } from '../../hooks/Context';
 
 interface ParamsInputEmail {
 	value?: string | undefined;
@@ -7,10 +8,14 @@ interface ParamsInputEmail {
 
 const InputEmail: React.FC<ParamsInputEmail> = ({ value }) => {
 	const [email, setEmail] = React.useState(value || '');
+	const { elementInputPassword } = React.useContext(Context) as ValuesParams;
 
 	React.useEffect(() => {
-		if (value) setEmail(value);
-	}, [value]);
+		if (value && elementInputPassword) {
+			setEmail(value);
+			elementInputPassword.focus();
+		}
+	}, [value, elementInputPassword]);
 
 	return (
 		<div className={style.input_container}>

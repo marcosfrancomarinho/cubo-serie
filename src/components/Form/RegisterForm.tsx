@@ -35,7 +35,11 @@ const RegisterForm: React.FC = () => {
 
 	if (datas && !error && datasUser)
 		return (
-			<Navigate replace state={{ email: datasUser.email }} to="/login"></Navigate>
+			<Navigate
+				replace
+				state={{ email: datasUser.email } as { email: string }}
+				to="/login"
+			></Navigate>
 		);
 	return (
 		<section className={style.container_form}>

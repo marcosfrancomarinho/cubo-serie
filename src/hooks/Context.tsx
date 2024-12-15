@@ -12,5 +12,7 @@ export interface ValuesParams {
 		redes: string;
 		id: number;
 	}[];
+	elementInputPassword: HTMLInputElement | null;
+	setElementInputPassword: React.Dispatch<React.SetStateAction<HTMLInputElement | null>>;
 }
 export const Context = React.createContext<ValuesParams | null>(null);

@@ -21,7 +21,7 @@ const LoginForm: React.FC = () => {
 	const [hide, setHide] = React.useState<boolean>(true);
 	const location = useLocation();
 	const emailLocation: string | undefined = location.state?.email;
-	
+
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
 		const datasUser = getDatasForm<ParamsFormLogin>(e);
@@ -35,7 +35,7 @@ const LoginForm: React.FC = () => {
 	React.useEffect(() => {
 		if (datas) setTokenLocalStorage(datas.token);
 	}, [datas]);
-	if (datas && !error) return <Navigate to="/prime"></Navigate>;
+	if (datas && !error) return <Navigate to="/"></Navigate>;
 	return (
 		<section className={style.container_form}>
 			<h2 className={style.title}>Faça o Login e Aproveite o Cinema em Casa:</h2>

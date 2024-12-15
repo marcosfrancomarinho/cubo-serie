@@ -8,10 +8,12 @@ interface ParamsGlobal {
 
 const Global: React.FC<ParamsGlobal> = ({ children }) => {
 	const datas: ValuesParams | null = useFetch('/json/db.json');
+	const [elementInputPassword, setElementInputPassword] =
+		React.useState<HTMLInputElement | null>(null);
 	if (datas) {
 		return (
 			<Context.Provider
-				value={{ ...datas }}
+				value={{ ...datas, elementInputPassword, setElementInputPassword }}
 			>
 				{children}
 			</Context.Provider>
