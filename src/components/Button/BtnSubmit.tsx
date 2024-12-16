@@ -3,11 +3,13 @@ import style from './Btn.module.css';
 
 interface ParamsBtnSubmit {
 	content: string | ReactNode;
+	disabled: boolean;
 }
 
-const BtnSubmit: React.FC<ParamsBtnSubmit> = ({ content }) => {
+const BtnSubmit: React.FC<ParamsBtnSubmit> = ({ content, disabled }) => {
 	return (
 		<button
+			disabled={disabled}
 			className={`
             ${style.btn}
             ${style.btn_submit}

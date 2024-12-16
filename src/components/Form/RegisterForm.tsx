@@ -10,6 +10,7 @@ import useSubmit from '../../hooks/useSubmit';
 import BtnRedirection from '../Button/Btn.redirection';
 import Alert from '../Alert/Alert';
 import { Navigate } from 'react-router-dom';
+import Spinner from '../Spinner/Spinner';
 
 interface ParamsFormRegister {
 	name: string;
@@ -28,11 +29,11 @@ const RegisterForm: React.FC = () => {
 		setHide(true);
 	};
 
-	const [datas, error, loading] = useSubmit<ParamsFormRegister>(
+	const [datas, error, loading, abortRequest] = useSubmit<ParamsFormRegister>(
 		'signup',
 		datasUser as ParamsFormRegister,
 	);
-
+	console.log(loading);
 	if (datas && !error && datasUser)
 		return (
 			<Navigate
@@ -54,8 +55,11 @@ const RegisterForm: React.FC = () => {
 				<InputEmail />
 				<InputPassword />
 				<div className={style.btn_group}>
-					<BtnSubmit content={`${loading ? 'carregando...' : 'Cadastrar'}`} />
-					<BtnReset content="Cancelar" />
+					<BtnSubmit
+						disabled={loading}
+						content={loading ? <Spinner /> : 'Cadastrar'}
+					/>
+					<BtnReset onClick={abortRequest} content="Cancelar" />
 					<BtnRedirection path="/login">Faça o Login</BtnRedirection>
 				</div>
 			</form>

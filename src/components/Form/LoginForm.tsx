@@ -20,6 +20,7 @@ interface ParamsFormLogin {
 const LoginForm: React.FC = () => {
 	const [datasUser, setData] = React.useState<ParamsFormLogin | null>(null);
 	const [hide, setHide] = React.useState<boolean>(true);
+
 	const location = useLocation();
 	const emailLocation: string | undefined = location.state?.email;
 
@@ -29,32 +30,40 @@ const LoginForm: React.FC = () => {
 		setData(datasUser);
 		setHide(true);
 	};
-	const [datas, error, loading] = useSubmit<ParamsFormLogin>(
+
+	const [datas, error, loading, abortRequest] = useSubmit<ParamsFormLogin>(
 		'login',
-		datasUser as ParamsFormLogin,
+		datasUser,
 	);
+
+
 	React.useEffect(() => {
 		if (datas) setTokenLocalStorage(datas.token);
 	}, [datas]);
-	if (datas && !error) return <Navigate to="/test"></Navigate>;
+
+	if (datas && !error) return <Navigate to="/test" replace />;
+
 	return (
 		<section className={style.container_form}>
 			<h2 className={style.title}>Faça o Login e Aproveite o Cinema em Casa:</h2>
-			<form onSubmit={(e) => handleSubmit(e)} className={style.form}>
+			<form onSubmit={handleSubmit} className={style.form}>
 				<InputEmail value={emailLocation} />
 				<InputPassword />
 				<div className={style.btn_group}>
-					<BtnSubmit content={loading ? <Spinner /> : 'Entrar'} />
-					<BtnReset content="Cancelar" />
+					<BtnSubmit disabled={loading} content={loading ? <Spinner /> : 'Entrar'} />
+
+					<BtnReset onClick={abortRequest} content="Cancelar" />
 					<BtnRedirection path="/signup">Criar conta</BtnRedirection>
 				</div>
 			</form>
-			{error && hide && (
+
+			{error && !loading && hide && (
 				<Alert hide={hide} setHide={setHide}>
-					{error.message}
+					{error.message || 'Erro desconhecido. Tente novamente mais tarde.'}
 				</Alert>
 			)}
 		</section>
 	);
 };
+
 export default LoginForm;
