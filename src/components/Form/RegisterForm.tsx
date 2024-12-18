@@ -33,7 +33,6 @@ const RegisterForm: React.FC = () => {
 		'signup',
 		datasUser as ParamsFormRegister,
 	);
-	console.log(loading);
 	if (datas && !error && datasUser)
 		return (
 			<Navigate

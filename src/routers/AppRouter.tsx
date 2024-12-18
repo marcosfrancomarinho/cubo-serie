@@ -3,9 +3,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import Register from '../pages/Register/Register';
 import Login from '../pages/Login/Login';
-import Test from '../pages/Test/Test';
 import RouterPublic from './RouterPublic';
 import RouterPrivate from './RouterPrivate';
+import Welcome from '../pages/Welcome/Welcome';
 
 const AppRouter: React.FC = () => {
 	return (
@@ -14,7 +14,7 @@ const AppRouter: React.FC = () => {
 				<Route
 					element={
 						<RouterPublic
-							redirectionRouter="/test"
+							redirectionRouter="/welcome"
 							pathname="/"
 							children={<Home />}
 						/>
@@ -24,7 +24,7 @@ const AppRouter: React.FC = () => {
 				<Route
 					element={
 						<RouterPublic
-							redirectionRouter="/test"
+							redirectionRouter="/welcome"
 							pathname="/"
 							children={<Register />}
 						/>
@@ -34,7 +34,7 @@ const AppRouter: React.FC = () => {
 				<Route
 					element={
 						<RouterPublic
-							redirectionRouter="/test"
+							redirectionRouter="/welcome"
 							pathname="/"
 							children={<Login />}
 						/>
@@ -43,9 +43,9 @@ const AppRouter: React.FC = () => {
 				/>
 				<Route
 					element={
-						<RouterPrivate redirectionRouter="/" pathname="/" children={<Test />} />
+						<RouterPrivate redirectionRouter="/" pathname="/" children={<Welcome />} />
 					}
-					path="/test"
+					path="/welcome"
 				/>
 			</Routes>
 		</BrowserRouter>

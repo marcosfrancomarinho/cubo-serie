@@ -16,7 +16,7 @@ const Home: React.FC = () => {
 			<main>
 				<div className={style.container_card}>
 					{images.map(({ url, title }) => (
-						<Card key={title} title={title} url={url} />
+						<Card  path="/login" key={title} title={title} url={url} />
 					))}
 				</div>
 			</main>

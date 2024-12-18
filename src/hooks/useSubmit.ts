@@ -17,17 +17,14 @@ function useSubmit<T>(
 
 	const controller = React.useRef<AbortController | null>(null);
 
-	// Função para abortar a requisição
 	const abortRequest = React.useCallback(() => {
 		if (controller.current) {
 			controller.current.abort();
 		}
 	}, []);
-
 	React.useEffect(() => {
 		if (!datasUser) return;
-
-		// Criar novo controller para cada nova requisição
+		
 		controller.current = new AbortController();
 		const signal = controller.current.signal;
 
@@ -38,11 +35,10 @@ function useSubmit<T>(
 				body: JSON.stringify(datasUser),
 				signal,
 			};
-
 			try {
-				setLoading(true); // Inicia o estado de loading
-				setError(null); // Reseta o erro anterior
-				setDatas(null); // Limpa os dados anteriores
+				setLoading(true); 
+				setError(null); 
+				setDatas(null);
 
 				const response = await fetch(
 					`https://clube-series-api.onrender.com/${path}`,
@@ -60,10 +56,8 @@ function useSubmit<T>(
 
 				setDatas({ ...json, token } as ParamsUseSubmit);
 			} catch (error) {
-				// Caso tenha erro, setar o erro
 				setError(error as Error);
 			} finally {
-				// Garanta que o loading seja desmarcado independentemente do resultado
 				setLoading(false);
 			}
 		};
@@ -71,10 +65,9 @@ function useSubmit<T>(
 		submitData();
 
 		return () => {
-			// Limpar o controller se o componente for desmontado ou a requisição for abortada
 			abortRequest();
 		};
-	}, [path, datasUser, abortRequest]); // Remover a dependência de isAborted
+	}, [path, datasUser, abortRequest]); 
 
 	return [datas, error, loading, abortRequest];
 }
