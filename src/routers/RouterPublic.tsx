@@ -4,19 +4,19 @@ import Fallback from '../components/Fallback/Fallback';
 import { Navigate } from 'react-router-dom';
 
 interface ParamsRouterPublic {
-	redirectionRouter: string;
+	redirectionToRouterAuthenticate: string;
 	children: ReactNode;
 	pathname: string;
 }
 
 const RouterPublic: React.FC<ParamsRouterPublic> = ({
-	redirectionRouter,
+	redirectionToRouterAuthenticate,
 	children,
 	pathname,
 }) => {
 	const { isLogin, isLoading } = useAuthenticate(pathname);
 	if (isLoading) return <Fallback />;
-	if (isLogin) return <Navigate to={redirectionRouter} replace />;
+	if (isLogin) return <Navigate to={redirectionToRouterAuthenticate} replace />;
 	return <>{children}</>;
 };
 

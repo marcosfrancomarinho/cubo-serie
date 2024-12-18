@@ -4,20 +4,20 @@ import Fallback from '../components/Fallback/Fallback';
 import { Navigate } from 'react-router-dom';
 
 interface ParamsRouterPrivate {
-	redirectionRouter: string;
+	redirectionToRouterDenied: string;
 	children: ReactNode;
 	pathname: string;
 }
 
 const RouterPrivate: React.FC<ParamsRouterPrivate> = ({
-	redirectionRouter,
+	redirectionToRouterDenied,
 	children,
 	pathname,
 }) => {
 	const { isLogin, isLoading } = useAuthenticate(pathname);
 	if (isLoading) return <Fallback />;
 	if (isLogin) return <>{children}</>;
-	return <Navigate to={redirectionRouter} replace />;
+	return <Navigate to={redirectionToRouterDenied} replace />;
 };
 
 export default RouterPrivate;

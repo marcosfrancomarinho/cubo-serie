@@ -36,7 +36,6 @@ const LoginForm: React.FC = () => {
 		datasUser,
 	);
 
-
 	React.useEffect(() => {
 		if (datas) setTokenLocalStorage(datas.token);
 	}, [datas]);
@@ -51,7 +50,6 @@ const LoginForm: React.FC = () => {
 				<InputPassword />
 				<div className={style.btn_group}>
 					<BtnSubmit disabled={loading} content={loading ? <Spinner /> : 'Entrar'} />
-
 					<BtnReset onClick={abortRequest} content="Cancelar" />
 					<BtnRedirection path="/signup">Criar conta</BtnRedirection>
 				</div>

@@ -14,7 +14,7 @@ const AppRouter: React.FC = () => {
 				<Route
 					element={
 						<RouterPublic
-							redirectionRouter="/welcome"
+							redirectionToRouterAuthenticate="/welcome"
 							pathname="/"
 							children={<Home />}
 						/>
@@ -24,7 +24,7 @@ const AppRouter: React.FC = () => {
 				<Route
 					element={
 						<RouterPublic
-							redirectionRouter="/welcome"
+							redirectionToRouterAuthenticate="/welcome"
 							pathname="/"
 							children={<Register />}
 						/>
@@ -34,7 +34,7 @@ const AppRouter: React.FC = () => {
 				<Route
 					element={
 						<RouterPublic
-							redirectionRouter="/welcome"
+							redirectionToRouterAuthenticate="/welcome"
 							pathname="/"
 							children={<Login />}
 						/>
@@ -43,7 +43,11 @@ const AppRouter: React.FC = () => {
 				/>
 				<Route
 					element={
-						<RouterPrivate redirectionRouter="/" pathname="/" children={<Welcome />} />
+						<RouterPrivate
+							redirectionToRouterDenied="/"
+							pathname="/"
+							children={<Welcome />}
+						/>
 					}
 					path="/welcome"
 				/>
