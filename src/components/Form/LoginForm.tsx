@@ -41,7 +41,7 @@ const LoginForm: React.FC = () => {
 		if (datas) setTokenLocalStorage(datas.token);
 	}, [datas]);
 
-	if (datas && !error) return <Navigate to="/test" replace />;
+	if (datas && !error) return <Navigate to="/welcome" replace />;
 
 	return (
 		<section className={style.container_form}>
