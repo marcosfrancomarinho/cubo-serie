@@ -6,15 +6,15 @@ import { Navigate } from 'react-router-dom';
 interface ParamsRouterPrivate {
 	redirectionRouter: string;
 	children: ReactNode;
-	routerOfAuthentication: string;
+	pathname: string;
 }
 
 const RouterPrivate: React.FC<ParamsRouterPrivate> = ({
 	redirectionRouter,
 	children,
-	routerOfAuthentication,
+	pathname,
 }) => {
-	const { isLogin, isLoading } = useAuthenticate(routerOfAuthentication);
+	const { isLogin, isLoading } = useAuthenticate(pathname);
 	if (isLoading) return <Fallback />;
 	if (isLogin) return <>{children}</>;
 	return <Navigate to={redirectionRouter} replace />;

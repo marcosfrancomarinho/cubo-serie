@@ -15,7 +15,7 @@ const AppRouter: React.FC = () => {
 					element={
 						<RouterPublic
 							redirectionRouter="/test"
-							routerOfAuthentication="/"
+							pathname="/"
 							children={<Home />}
 						/>
 					}
@@ -25,7 +25,7 @@ const AppRouter: React.FC = () => {
 					element={
 						<RouterPublic
 							redirectionRouter="/test"
-							routerOfAuthentication="/"
+							pathname="/"
 							children={<Register />}
 						/>
 					}
@@ -35,7 +35,7 @@ const AppRouter: React.FC = () => {
 					element={
 						<RouterPublic
 							redirectionRouter="/test"
-							routerOfAuthentication="/"
+							pathname="/"
 							children={<Login />}
 						/>
 					}
@@ -43,11 +43,7 @@ const AppRouter: React.FC = () => {
 				/>
 				<Route
 					element={
-						<RouterPrivate
-							redirectionRouter="/"
-							routerOfAuthentication="/"
-							children={<Test />}
-						/>
+						<RouterPrivate redirectionRouter="/" pathname="/" children={<Test />} />
 					}
 					path="/test"
 				/>
