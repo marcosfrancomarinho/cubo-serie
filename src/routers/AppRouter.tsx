@@ -4,15 +4,53 @@ import Home from '../pages/Home/Home';
 import Register from '../pages/Register/Register';
 import Login from '../pages/Login/Login';
 import Test from '../pages/Test/Test';
+import RouterPublic from './RouterPublic';
+import RouterPrivate from './RouterPrivate';
 
 const AppRouter: React.FC = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route element={<Home />} path="/" />
-				<Route element={<Register />} path="/signup" />
-				<Route element={<Login />} path="/login" />
-				<Route element={<Test />} path="/test" />
+				<Route
+					element={
+						<RouterPublic
+							redirectionRouter="/test"
+							routerOfAuthentication="/"
+							children={<Home />}
+						/>
+					}
+					path="/"
+				/>
+				<Route
+					element={
+						<RouterPublic
+							redirectionRouter="/test"
+							routerOfAuthentication="/"
+							children={<Register />}
+						/>
+					}
+					path="/signup"
+				/>
+				<Route
+					element={
+						<RouterPublic
+							redirectionRouter="/test"
+							routerOfAuthentication="/"
+							children={<Login />}
+						/>
+					}
+					path="/login"
+				/>
+				<Route
+					element={
+						<RouterPrivate
+							redirectionRouter="/"
+							routerOfAuthentication="/"
+							children={<Test />}
+						/>
+					}
+					path="/test"
+				/>
 			</Routes>
 		</BrowserRouter>
 	);
