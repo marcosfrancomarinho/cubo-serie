@@ -11,7 +11,7 @@ const AppRouter: React.FC = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route
+				<Route 
 					element={
 						<RouterPublic
 							redirectionToRouterAuthenticate="/welcome"
