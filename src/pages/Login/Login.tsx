@@ -8,7 +8,7 @@ const Login: React.FC = () => {
 	const { menu, title, footer } = React.useContext(Context) as ValuesParams;
 	return (
 		<>
-			<Header menu={menu} title={title} />
+			<Header menu={menu.public} title={title} />
 			<main>
 				<LoginForm />
 			</main>

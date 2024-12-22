@@ -8,7 +8,7 @@ const Register: React.FC = () => {
 	const { menu, title, footer } = React.useContext(Context) as ValuesParams;
 	return (
 		<>
-			<Header menu={menu} title={title} />
+			<Header menu={menu.private} title={title} />
 			<main>
 				<RegisterForm />
 			</main>

@@ -2,7 +2,10 @@ import React from 'react';
 
 export interface ValuesParams {
 	title: string;
-	menu: string[];
+	menu: {
+		public: string[];
+		private: string[];
+	};
 	images: {
 		url: string;
 		title: string;
@@ -13,6 +16,8 @@ export interface ValuesParams {
 		id: number;
 	}[];
 	elementInputPassword: HTMLInputElement | null;
-	setElementInputPassword: React.Dispatch<React.SetStateAction<HTMLInputElement | null>>;
+	setElementInputPassword: React.Dispatch<
+		React.SetStateAction<HTMLInputElement | null>
+	>;
 }
 export const Context = React.createContext<ValuesParams | null>(null);

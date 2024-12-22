@@ -73,11 +73,17 @@
             "url": "/images/simpson.jpg"
         }
     ],
-    "menu": [
-        "Home",
-        "login",
-        "Sign up"
-    ],
+    "menu": {
+        "public": [
+            "Home",
+            "login",
+            "Sign up"
+        ],
+        "private": [
+            "Populares",
+            "Novidades"
+        ]
+    },
     "title": "Clube das Series",
     "footer": [
         {

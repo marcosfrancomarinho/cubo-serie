@@ -12,7 +12,7 @@ const Home: React.FC = () => {
 
 	return (
 		<>
-			<Header menu={menu} title={title} />
+			<Header menu={menu.public} title={title} />
 			<main>
 				<div className={style.container_card}>
 					{images.map(({ url, title }) => (
