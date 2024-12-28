@@ -1,12 +1,8 @@
 import React from 'react';
-import style from './Btn.module.css';
+import style from '../../../styles/Btn.module.css';
+import { IBtnReset } from './BtnReset.interface';
 
-interface ParamsBtnReset {
-	content: string;
-	onClick?: () => void;
-}
-
-const BtnReset: React.FC<ParamsBtnReset> = ({ content, onClick }) => {
+const BtnReset: React.FC<IBtnReset> = ({ content, onClick }) => {
 	return (
 		<button
 			onClick={onClick}

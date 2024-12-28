@@ -7,7 +7,7 @@ interface UseAuthenticateResponse {
 	error: string | null;
 }
 
-const useAuthenticate = (path: string): UseAuthenticateResponse => {
+export const useAuthenticate = (path: string): UseAuthenticateResponse => {
 	const [isLogin, setIsLogin] = React.useState(false);
 	const [isLoading, setIsLoading] = React.useState(true);
 	const [error, setError] = React.useState<string | null>(null);
@@ -44,8 +44,6 @@ const useAuthenticate = (path: string): UseAuthenticateResponse => {
 		};
 		verifyAuthentication();
 	}, [path]);
-
 	return { isLogin, isLoading, error };
 };
 
-export default useAuthenticate;

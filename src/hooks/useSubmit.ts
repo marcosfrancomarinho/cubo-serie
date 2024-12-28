@@ -7,7 +7,7 @@ interface ParamsUseSubmit {
 	token: string;
 }
 
-function useSubmit<T>(
+export function useSubmit<T>(
 	path: string,
 	datasUser: T | null,
 ): [ParamsUseSubmit | null, Error | null, boolean, () => void] {
@@ -60,5 +60,3 @@ function useSubmit<T>(
 	}, [path, datasUser, abortRequest]); 
 	return [datas, error, loading, abortRequest];
 }
-
-export default useSubmit;

@@ -2,14 +2,11 @@ import React from 'react';
 import style from './Header.module.css';
 import { Link } from 'react-router-dom';
 import Menu from '../Menu/Menu';
+import { IHeader } from './Header.iterface';
+import { useHeader } from './UseHeader';
 
-interface ParamsHeader {
-	title: string;
-	menu: string[];
-}
-
-const Header: React.FC<ParamsHeader> = ({ menu, title }) => {
-	const [visibility, setVisibility] = React.useState<boolean>(false);
+const Header: React.FC<IHeader> = ({ menu, title }) => {
+	const { setVisibility, visibility } = useHeader();
 	return (
 		<header className={style.header}>
 			<Link className={style.title} to="/">

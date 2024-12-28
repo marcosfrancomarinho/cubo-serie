@@ -1,13 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import style from './Alert.module.css';
+import { IAlert } from './Alert.interface';
 
-interface ParamsAlert {
-	children: ReactNode;
-	hide: boolean;
-	setHide: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const Alert: React.FC<ParamsAlert> = ({ children, setHide, hide }) => {
+const Alert: React.FC<IAlert> = ({ children, setHide, hide }) => {
 	return (
 		<div className={style.alert}>
 			<div className={style.content}>{children}</div>

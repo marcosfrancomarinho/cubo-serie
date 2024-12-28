@@ -1,13 +1,9 @@
 import React from 'react';
-import style from './Input.module.css';
-import { Context, ValuesParams } from '../../hooks/Context';
+import style from '../../../styles/Input.module.css';
+import { useInputPassword } from './UseInputPassword';
 
 const InputPassword: React.FC = () => {
-	const { setElementInputPassword } = React.useContext(Context) as ValuesParams;
-	const elementInputPassword = React.useRef<HTMLInputElement | null>(null);
-	React.useEffect(() => {
-		setElementInputPassword(elementInputPassword.current);
-	});
+	const { elementInputPassword } = useInputPassword();
 	return (
 		<div className={style.input_container}>
 			<label className={style.label} htmlFor="password">

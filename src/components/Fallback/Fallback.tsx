@@ -1,12 +1,8 @@
 import React from 'react';
 import style from './Fallback.module.css';
+import { IFallback } from './Fallback.interface';
 
-interface FallbackProps {
-	message?: string;
-	showSpinner?: boolean;
-}
-
-const Fallback: React.FC<FallbackProps> = ({
+const Fallback: React.FC<IFallback> = ({
 	message = 'Carregando...',
 	showSpinner = true,
 }) => {
