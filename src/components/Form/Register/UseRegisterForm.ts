@@ -1,9 +1,9 @@
 import { useSubmit } from '../../../hooks/useSubmit';
 import getDatasForm from '../../../utils/getDataForm';
-import { IFormRegister } from './RegisterForm.interface';
+import { IFormRegister, IUseRegisterForm } from './RegisterForm.interface';
 import React from 'react';
 
-export const useRegisterForm = () => {
+export const useRegisterForm = (): IUseRegisterForm => {
 	const [datasUser, setData] = React.useState<IFormRegister | null>(null);
 	const [hide, setHide] = React.useState<boolean>(true);
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {

@@ -1,11 +1,11 @@
 import React from 'react';
-import { IFormLogin } from './LoginForm.interface';
+import { IFormLogin, IUseFormLogin } from './LoginForm.interface';
 import { useSubmit } from '../../../hooks/useSubmit';
 import getDatasForm from '../../../utils/getDataForm';
 import { useLocation } from 'react-router-dom';
 import { setTokenLocalStorage } from '../../../utils/localStorage';
 
-export const useFormLogin = () => {
+export const useFormLogin = (): IUseFormLogin => {
 	const [datasUser, setData] = React.useState<IFormLogin | null>(null);
 	const [hide, setHide] = React.useState<boolean>(true);
 	const location = useLocation();

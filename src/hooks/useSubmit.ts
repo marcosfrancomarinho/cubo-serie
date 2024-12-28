@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface ParamsUseSubmit {
+export interface ParamsUseSubmit {
 	ok: boolean;
 	status: string;
 	name: string;
