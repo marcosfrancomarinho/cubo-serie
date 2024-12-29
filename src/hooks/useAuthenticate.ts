@@ -33,7 +33,7 @@ export const useAuthenticate = (path: string): UseAuthenticateResponse => {
 				);
 				const json = await response.json();
 				if (!response.ok) throw new Error(json.error);
-				setIsLogin(json.isLogin);
+				setIsLogin(response.ok);
 				setError(null);
 			} catch (err: unknown) {
 				setIsLogin(false);

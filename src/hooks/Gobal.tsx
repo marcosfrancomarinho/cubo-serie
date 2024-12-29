@@ -12,15 +12,13 @@ const Global: React.FC<ParamsGlobal> = ({ children }) => {
 	);
 	const [elementInputPassword, setElementInputPassword] =
 		React.useState<HTMLInputElement | null>(null);
-	if (datas) {
-		return (
-			<Context.Provider
-				value={{ ...datas, elementInputPassword, setElementInputPassword }}
-			>
-				{children}
-			</Context.Provider>
-		);
-	}
+	return (
+		<Context.Provider
+			value={{ ...datas!, elementInputPassword, setElementInputPassword }}
+		>
+			{children}
+		</Context.Provider>
+	);
 };
 
 export default Global;

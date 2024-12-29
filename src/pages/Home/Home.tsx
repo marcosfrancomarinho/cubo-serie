@@ -4,19 +4,20 @@ import { Context, ValuesParams } from '../../hooks/Context';
 import Card from '../../components/Card/Card';
 import style from './Home.module.css';
 import Footer from '../../components/Footer/Footer';
+import Fallback from '../../components/Fallback/Fallback';
 
 const Home: React.FC = () => {
 	const { menu, title, images, footer } = React.useContext(
 		Context,
 	) as ValuesParams;
-
+	if (!menu) return <Fallback />;
 	return (
 		<>
 			<Header menu={menu.public} title={title} />
 			<main>
 				<div className={style.container_card}>
 					{images.map(({ url, title }) => (
-						<Card  path="/login" key={title} title={title} url={url} />
+						<Card path="/login" key={title} title={title} url={url} />
 					))}
 				</div>
 			</main>
