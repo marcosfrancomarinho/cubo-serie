@@ -35,7 +35,6 @@ const LoginForm: React.FC = () => {
 					<BtnRedirection path="/signup">Criar conta</BtnRedirection>
 				</div>
 			</form>
-
 			{error && !loading && hide && (
 				<Alert hide={hide} setHide={setHide}>
 					{error.message || 'Erro desconhecido. Tente novamente mais tarde.'}

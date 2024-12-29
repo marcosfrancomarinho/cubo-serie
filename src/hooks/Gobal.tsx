@@ -7,7 +7,9 @@ interface ParamsGlobal {
 }
 
 const Global: React.FC<ParamsGlobal> = ({ children }) => {
-	const datas: ValuesParams | null = useFetch('/json/db.json');
+	const datas: ValuesParams | null = useFetch(
+		'https://clube-series-api.onrender.com',
+	);
 	const [elementInputPassword, setElementInputPassword] =
 		React.useState<HTMLInputElement | null>(null);
 	if (datas) {

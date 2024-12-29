@@ -15,7 +15,7 @@ const Welcome: React.FC = () => {
 				style={{
 					display: 'flex',
 					flexWrap: 'wrap',
-					gap:'5px'
+					gap: '5px',
 				}}
 			>
 				{images.map(({ title, url }) => (
