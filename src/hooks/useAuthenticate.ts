@@ -38,6 +38,7 @@ export const useAuthenticate = (path: string): UseAuthenticateResponse => {
 			} catch (err: unknown) {
 				setIsLogin(false);
 				setError(err instanceof Error ? err.message : 'Erro desconhecido');
+				localStorage.removeItem('token');
 			} finally {
 				setIsLoading(false);
 			}
@@ -46,4 +47,3 @@ export const useAuthenticate = (path: string): UseAuthenticateResponse => {
 	}, [path]);
 	return { isLogin, isLoading, error };
 };
-
