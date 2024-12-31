@@ -5,12 +5,10 @@ import { Context, ValuesParams } from '../../hooks/Context';
 import Card from '../../components/Card/Card';
 
 const Welcome: React.FC = () => {
-	const { footer, menu, title, images } = React.useContext(
-		Context,
-	) as ValuesParams;
+	const { footer, menu, images } = React.useContext(Context) as ValuesParams;
 	return (
 		<>
-			<Header menu={menu.private} title={title} />
+			<Header menu={menu.private} title={menu.title} />
 			<main
 				style={{
 					display: 'flex',

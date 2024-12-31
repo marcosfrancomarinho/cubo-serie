@@ -7,13 +7,13 @@ import Footer from '../../components/Footer/Footer';
 import Fallback from '../../components/Fallback/Fallback';
 
 const Home: React.FC = () => {
-	const { menu, title, images, footer } = React.useContext(
+	const { menu, images, footer } = React.useContext(
 		Context,
 	) as ValuesParams;
 	if (!menu) return <Fallback />;
 	return (
 		<>
-			<Header menu={menu.public} title={title} />
+			<Header menu={menu.public} title={menu.title} />
 			<main>
 				<div className={style.container_card}>
 					{images.map(({ url, title }) => (

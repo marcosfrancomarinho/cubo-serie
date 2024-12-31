@@ -1,10 +1,10 @@
 import React from 'react';
 
 export interface ValuesParams {
-	title: string;
 	menu: {
 		public: string[];
 		private: string[];
+		title: string;
 	};
 	images: {
 		url: string;

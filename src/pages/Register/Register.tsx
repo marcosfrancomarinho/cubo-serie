@@ -6,11 +6,11 @@ import RegisterForm from '../../components/Form/Register/RegisterForm';
 import Fallback from '../../components/Fallback/Fallback';
 
 const Register: React.FC = () => {
-	const { menu, title, footer } = React.useContext(Context) as ValuesParams;
+	const { menu, footer } = React.useContext(Context) as ValuesParams;
 	if (!menu) return <Fallback />;
 	return (
 		<>
-			<Header menu={menu.public} title={title} />
+			<Header menu={menu.public} title={menu.title} />
 			<main>
 				<RegisterForm />
 			</main>

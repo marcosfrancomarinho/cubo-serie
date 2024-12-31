@@ -6,6 +6,7 @@ import { IHeader } from './Header.iterface';
 import { useHeader } from './UseHeader';
 
 const Header: React.FC<IHeader> = ({ menu, title }) => {
+	console.log(title)
 	const { setVisibility, visibility } = useHeader();
 	return (
 		<header className={style.header}>
