@@ -10,7 +10,7 @@ const Register: React.FC = () => {
 	if (!menu) return <Fallback />;
 	return (
 		<>
-			<Header menu={menu.public} title={title} />
+			<Header menu={menu[0].public} title={title} />
 			<main>
 				<RegisterForm />
 			</main>
