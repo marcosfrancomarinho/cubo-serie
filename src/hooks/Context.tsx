@@ -5,7 +5,7 @@ export interface ValuesParams {
 	menu: {
 		public: string[];
 		private: string[];
-	}[];
+	};
 	images: {
 		url: string;
 		title: string;

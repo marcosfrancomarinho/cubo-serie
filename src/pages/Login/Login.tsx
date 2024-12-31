@@ -10,7 +10,7 @@ const Login: React.FC = () => {
 	if (!menu) return <Fallback />;
 	return (
 		<>
-			<Header menu={menu[0].public} title={title} />
+			<Header menu={menu.public} title={title} />
 			<main>
 				<LoginForm />
 			</main>

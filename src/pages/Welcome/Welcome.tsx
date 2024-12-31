@@ -10,7 +10,7 @@ const Welcome: React.FC = () => {
 	) as ValuesParams;
 	return (
 		<>
-			<Header menu={menu[0].private} title={title} />
+			<Header menu={menu.private} title={title} />
 			<main
 				style={{
 					display: 'flex',

@@ -13,7 +13,7 @@ const Home: React.FC = () => {
 	if (!menu) return <Fallback />;
 	return (
 		<>
-			<Header menu={menu[0].public} title={title} />
+			<Header menu={menu.public} title={title} />
 			<main>
 				<div className={style.container_card}>
 					{images.map(({ url, title }) => (
