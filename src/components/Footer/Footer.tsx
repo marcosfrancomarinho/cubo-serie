@@ -1,7 +1,7 @@
-import React from 'react';
-import style from './Footer.module.css';
-import Redes from '../Redes/Redes';
-import { IFooter } from './Footer.interface';
+import React from "react";
+import style from "./Footer.module.css";
+import Redes from "../Redes/Redes";
+import { IFooter } from "./Footer";
 
 const Footer: React.FC<IFooter> = ({ footer }) => {
 	return (

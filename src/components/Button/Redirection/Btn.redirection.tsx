@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import style from './BtnRedirection.module.css';
-import { IBtnRedirecion } from './BtnRedirection.interface';
+import style from './Btn.redirection.module.css';
+import { IBtnRedirecion } from './Btn.redirection.type';
 
 const BtnRedirection: React.FC<IBtnRedirecion> = ({ children, path }) => {
 	return (

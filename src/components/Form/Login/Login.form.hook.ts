@@ -1,9 +1,9 @@
-import React from 'react';
-import { IFormLogin, IUseFormLogin } from './LoginForm.interface';
-import { useSubmit } from '../../../hooks/useSubmit';
-import getDatasForm from '../../../utils/getDataForm';
-import { useLocation } from 'react-router-dom';
-import { setTokenLocalStorage } from '../../../utils/localStorage';
+import React from "react";
+import { IFormLogin, IUseFormLogin } from "./Login.form.type";
+import { useSubmit } from "../../../hooks/use.submit";
+import getDatasForm from "../../../utils/get.data.form";
+import { useLocation } from "react-router-dom";
+import { setTokenLocalStorage } from "../../../utils/local.storage";
 
 export const useFormLogin = (): IUseFormLogin => {
 	const [datasUser, setData] = React.useState<IFormLogin | null>(null);
@@ -16,10 +16,7 @@ export const useFormLogin = (): IUseFormLogin => {
 		setData(datasUser);
 		setHide(true);
 	};
-	const [datas, error, loading, abortRequest] = useSubmit<IFormLogin>(
-		'login',
-		datasUser,
-	);
+	const [datas, error, loading, abortRequest] = useSubmit<IFormLogin>("login", datasUser);
 	React.useEffect(() => {
 		if (datas) setTokenLocalStorage(datas.token);
 	}, [datas]);

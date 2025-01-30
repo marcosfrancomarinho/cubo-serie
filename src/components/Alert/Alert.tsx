@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Alert.module.css';
-import { IAlert } from './Alert.interface';
+import { IAlert } from './Alert';
 
 const Alert: React.FC<IAlert> = ({ children, setHide, hide }) => {
 	return (

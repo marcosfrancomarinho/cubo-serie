@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Card.module.css';
 import { Link } from 'react-router-dom';
-import { ICard } from './Card.interface';
+import { ICard } from './Card';
 
 const Card: React.FC<ICard> = ({ title, url, path }) => {
 	return (

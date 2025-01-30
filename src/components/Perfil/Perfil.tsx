@@ -2,7 +2,7 @@ import React from 'react';
 import urlPerfil from '../../../public/images/perfil.jpg';
 import style from './Perfil.module.css';
 import { Link } from 'react-router-dom';
-import { IPerfil } from './Perfil.interface';
+import { IPerfil } from './Perfil.type';
 
 const Perfil: React.FC<IPerfil> = ({ name }) => {
 	return (

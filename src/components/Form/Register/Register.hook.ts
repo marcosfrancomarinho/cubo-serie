@@ -1,7 +1,7 @@
-import { useSubmit } from '../../../hooks/useSubmit';
-import getDatasForm from '../../../utils/getDataForm';
-import { IFormRegister, IUseRegisterForm } from './RegisterForm.interface';
-import React from 'react';
+import { useSubmit } from "../../../hooks/use.submit";
+import getDatasForm from "../../../utils/get.data.form";
+import { IFormRegister, IUseRegisterForm } from "./Register.form.type";
+import React from "react";
 
 export const useRegisterForm = (): IUseRegisterForm => {
 	const [datasUser, setData] = React.useState<IFormRegister | null>(null);
@@ -12,10 +12,7 @@ export const useRegisterForm = (): IUseRegisterForm => {
 		setData(datasUser);
 		setHide(true);
 	};
-	const [datas, error, loading, abortRequest] = useSubmit<IFormRegister>(
-		'signup',
-		datasUser as IFormRegister,
-	);
+	const [datas, error, loading, abortRequest] = useSubmit<IFormRegister>("signup", datasUser as IFormRegister);
 	return {
 		datas,
 		error,

@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
-import { useAuthenticate } from '../hooks/useAuthenticate';
-import Fallback from '../components/Fallback/Fallback';
-import { Navigate } from 'react-router-dom';
+import { ReactNode } from "react";
+import { useAuthenticate } from "../hooks/Use.authenticate";
+import Fallback from "../components/Fallback/Fallback";
+import { Navigate } from "react-router-dom";
 
 interface ParamsRouterPrivate {
 	redirectionToRouterDenied: string;
@@ -9,11 +9,7 @@ interface ParamsRouterPrivate {
 	pathname: string;
 }
 
-const RouterPrivate: React.FC<ParamsRouterPrivate> = ({
-	redirectionToRouterDenied,
-	children,
-	pathname,
-}) => {
+const RouterPrivate: React.FC<ParamsRouterPrivate> = ({ redirectionToRouterDenied, children, pathname }) => {
 	const { isLogin, isLoading } = useAuthenticate(pathname);
 	if (isLoading) return <Fallback />;
 	if (isLogin) return <>{children}</>;

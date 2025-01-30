@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../../../styles/Btn.module.css';
-import { IBtnReset } from './BtnReset.interface';
+import { IBtnReset } from './Btn.reset.type';
 
 const BtnReset: React.FC<IBtnReset> = ({ content, onClick }) => {
 	return (

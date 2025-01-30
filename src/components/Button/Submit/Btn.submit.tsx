@@ -1,7 +1,6 @@
-import React from 'react';
-import style from '../../../styles/Btn.module.css';
-import { IBtnSubmit } from './BtnSubmit.interface';
-
+import React from "react";
+import style from "../../../styles/Btn.module.css";
+import { IBtnSubmit } from "./Btn.submit.type";
 const BtnSubmit: React.FC<IBtnSubmit> = ({ content, disabled }) => {
 	return (
 		<button

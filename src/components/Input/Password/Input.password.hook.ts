@@ -1,6 +1,6 @@
 import React from 'react';
 import { Context, ValuesParams } from '../../../hooks/Context';
-import { IUseInputPassword } from './InputPassowd.interface';
+import { IUseInputPassword } from './Input.passowd.type';
 
 export const useInputPassword = (): IUseInputPassword => {
 	const { setElementInputPassword } = React.useContext(Context) as ValuesParams;

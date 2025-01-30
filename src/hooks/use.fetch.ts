@@ -1,5 +1,5 @@
-import React from 'react';
-import { ValuesParams } from '../hooks/Context';
+import React from "react";
+import { ValuesParams } from "./Context";
 
 export function useFetch(url: string): ValuesParams | null {
 	const [datas, setDatas] = React.useState<ValuesParams | null>(null);

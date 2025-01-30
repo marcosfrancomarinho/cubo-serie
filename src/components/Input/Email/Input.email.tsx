@@ -1,7 +1,7 @@
-import React from 'react';
-import style from '../../../styles/Input.module.css';
-import { IInputEmail } from './InputEmail.interface';
-import { useInputEmail } from './useInputEmail';
+import React from "react";
+import style from "../../../styles/Input.module.css";
+import { IInputEmail } from "./Input.email.type";
+import { useInputEmail } from "./Input.email.hook";
 
 const InputEmail: React.FC<IInputEmail> = ({ value }) => {
 	const { email, setEmail } = useInputEmail(value!);

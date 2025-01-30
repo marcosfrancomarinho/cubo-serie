@@ -1,4 +1,4 @@
-import { ParamsUseSubmit } from '../../../hooks/useSubmit';
+import { ParamsUseSubmit } from "../../../hooks/use.submit";
 
 export interface IFormLogin {
 	email: string;

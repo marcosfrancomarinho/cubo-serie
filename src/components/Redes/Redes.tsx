@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Redes.module.css';
-import { IRedes } from './Redes.interface';
+import { IRedes } from './Redes.type';
 
 const Redes: React.FC<IRedes> = ({ redes, url, id }) => {
 	return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../../../styles/Input.module.css';
-import { useInputPassword } from './UseInputPassword';
+import { useInputPassword } from './Input.password.hook';
 
 const InputPassword: React.FC = () => {
 	const { elementInputPassword } = useInputPassword();
